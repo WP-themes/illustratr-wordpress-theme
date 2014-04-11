@@ -1,0 +1,15 @@
+/*--------------------------------------------------------------
+Media
+--------------------------------------------------------------*/
+
+/* Galleries */
+.gallery {
+	.gallery-item {
+		float: right;
+	}
+}
+
+/* Gallery Columns */
+@for $i from 2 through 9 {
+	@include gallery-column-rtl(0, $i);
+}

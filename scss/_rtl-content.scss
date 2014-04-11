@@ -1,0 +1,41 @@
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+
+.page-header,
+.hentry {
+	+ .hentry {
+		@include hentry-rtl;
+	}
+}
+
+/* Entry header */
+.featured-post + .cat-links {
+	&:before {
+		margin-right: $vspacing / 4;
+		margin-left: 0;
+	}
+}
+
+/* Entry meta */
+.entry-meta {
+	span {
+		&:after {
+			margin-right: $vspacing / 4;
+			margin-left: 0;
+		}
+		&:last-of-type:after {
+			margin-right: 0;
+		}
+	}
+}
+
+/* Page links */
+.page-links {
+	.page-link {
+		@include page-link-rtl;
+	}
+	a {
+		@include page-link-rtl;
+	}
+}

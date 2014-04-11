@@ -1,0 +1,66 @@
+ /*--------------------------------------------------------------
+Comments
+--------------------------------------------------------------*/
+
+.comments-area,
+.comment-list + .comment-respond {
+	@include hentry-rtl;
+}
+
+/* Comment list */
+.comment-list {
+	.children {
+		margin-right: $vspacing + 60px; // wp_list_comments( avatar_size )
+		margin-left: 0;
+		@include screen($tablet, $desktop - 1px) {
+			margin-right: $vspacing-double;
+			margin-left: 0;
+		}
+		@include max-screen($tablet - 1px) {
+			margin-right: $vspacing;
+			margin-left: 0;
+		}
+	}
+	.no-avatar + ol {
+		margin-right: $vspacing-double;
+		margin-left: 0;
+	}
+	.pingback {
+		.comment-body {
+			text-align: right;
+		}
+	}
+}
+
+/* Comment author */
+.comment-author {
+	float: right;
+}
+
+/* Comment meta */
+.comment-meta-details {
+	text-align: right;
+	span {
+		&:after {
+			margin-right: $vspacing / 4;
+			margin-left: 0;
+		}
+		&:last-of-type:after {
+			margin-right: 0;
+		}
+	}
+}
+
+/* Comment content */
+.comment-content {
+	margin-right: $vspacing + 60px; // wp_list_comments( avatar_size )
+	margin-left: 0;
+}
+.no-avatar .comment-content {
+	margin-right: 0;
+}
+
+/* No comments */
+.no-comments {
+	@include hentry-rtl;
+}

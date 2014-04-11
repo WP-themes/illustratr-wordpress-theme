@@ -1,0 +1,14 @@
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+blockquote {
+	padding-left: 0;
+	padding-right: $vspacing-double;
+	border-left: 0;
+	border-right: 2px solid $link-color;
+	@include max-screen($tablet - 1px) {
+		padding-left: 0;
+		padding-right: $vspacing;
+	}
+}

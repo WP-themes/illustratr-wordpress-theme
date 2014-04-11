@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------
+Jetpack
+--------------------------------------------------------------*/
+
+/* Contact form */
+.site-main {
+	.contact-form {
+		input[type="checkbox"],
+		input[type="radio"] {
+			margin: 0 0 0 ($vspacing / 4);
+		}
+		.clear-form + label[class*="radio"],
+		.clear-form + label[class*="checkbox"] {
+			float: right;
+		}
+	}
+}
+
+/* Infinite Scroll */
+.infinite-wrap {
+	> .hentry {
+		@include hentry-rtl;
+	}
+}
+#infinite-handle {
+	@include hentry-rtl;
+	&:before {
+		@include full-width-area-rtl;
+	}
+	span {
+		border-width: 0 0 1px 0;
+		font-weight: inherit;
+		&:before {
+			display: none;
+		}
+	}
+}
+span.infinite-loader {
+	&:before {
+		@include full-width-area-rtl;
+	}
+}

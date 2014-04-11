@@ -1,0 +1,324 @@
+/*--------------------------------------------------------------
+Menu
+--------------------------------------------------------------*/
+
+.main-navigation {
+	clear: both;
+	display: block;
+	font-size: 0.73em;
+	line-height: 1.3;
+	font-weight: 900;
+	text-transform: uppercase;
+	
+	// First level
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		li {
+			display: inline-block;
+			position: relative;
+			margin-left: 8px;
+			margin-right: 8px;
+			a {
+				display: block;
+				padding-bottom: 7px;
+				color: $darker-color;
+				text-decoration: none;
+				@include transition(all 250ms ease);
+				@include hover(color, $link-color);
+			}
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				> ul {
+					@include min-screen($desktop) {
+						display: block;
+						opacity: 1;
+						@include animation;
+					}
+				}
+			}
+		}
+		.current_page_item,
+		.current-menu-item {
+			> a {
+				color: $link-color;
+			}
+		}
+		.genericon {
+			position: absolute;
+			top: -1px;
+			right: 0;
+			z-index: 9999;
+			width: $vspacing-double;
+			height: $vspacing-double;
+			background: $background-color;
+			border: 1px solid $lighter-color;
+			color: $darker-color;
+			font-size: 24px;
+			line-height: $vspacing-double;
+			text-align: center;
+			&.genericon-collapse {
+				background: $link-color;
+				color: $background-color;
+			}
+		}
+		
+		// 2nd level
+		ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			z-index: 9998;
+			float: left;
+			padding: ($vspacing / 2) 0;
+			margin-left: -100px; // ul ul a { width } / 2
+			background: $background-color;
+			border: 1px solid $lighter-color;
+			text-align: left;
+			@include min-screen($desktop) {
+				opacity: 0;
+				&:before,
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 50%;
+				}
+				&:before {
+					top: -5px;
+					z-index: 2;
+					border-right: 5px solid transparent;
+					border-bottom: 5px solid $background-color;
+				}
+				&:after {
+					margin-left: -1px;
+					top: -7px;
+					z-index: 1;
+					border-right: 7px solid transparent;
+					border-bottom: 7px solid $lighter-color;
+				}	
+			}
+			li {
+				padding: ($vspacing / 2) 0;
+				margin: 0;
+				border-bottom: 1px solid $lighter-color;
+				&:first-child {
+					padding-top: 0;
+				}
+				&:last-child {
+					padding-bottom: 0;
+					border-bottom: 0;
+				}
+			}
+			a {
+				padding: 0 ($vspacing / 2);
+				width: 200px;
+			}
+			
+			// 3rd level
+			ul {
+				top: -($vspacing / 2 + 1px) + 10px;
+				left: 100%;
+				margin-left: -10px;
+				@include min-screen($desktop) {
+					&:before,
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+	// Small menu
+	.menu-toggle {
+		display: none;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		z-index: 1;
+		margin: 0 0 0 (-$vspacing);
+		width: $vspacing-double;
+		height: $vspacing-double;
+		background: $background-color;
+		color: $darker-color;
+		border: 1px solid $lighter-color;
+		.genericon {
+			line-height: $vspacing-double;
+		}
+	}
+	&.toggled {
+		.menu-toggle {
+			background: $link-color;
+			color: $background-color;
+		}
+	}
+	
+	@include max-screen($desktop - 1px) {
+		position: relative;
+		padding: 0;
+		width: 100%;
+		min-height: $vspacing-double;
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			z-index: 0;
+			height: 1px;
+			background: $lighter-color;
+			@include full-width-area;
+		}
+		&:before {
+			top: 0;
+		}
+		&:after {
+			bottom: 0;
+		}
+		.menu-toggle {
+			display: inline-block;
+		}
+		&.toggled {
+			.menu-wrapper {
+				padding-top: $vspacing-double;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: $vspacing-double - 1px;
+					left: -$vspacing-double;
+					padding: 0 $vspacing-double;
+					width: 100%;
+					height: 1px;
+					background: $lighter-color;
+					@include box-sizing(content-box);
+				}
+			}
+			.nav-menu {
+				display: block;
+				margin-bottom: -1px;
+			}
+		}
+		
+		// 1st level
+		ul {
+			position: relative;
+			display: none;
+			margin: 0;
+			text-align: left;
+			li {
+				display: block;
+				padding: ($vspacing / 2) 0;
+				margin: 0;
+				min-height: $vspacing-double - 2px;
+				border-bottom: 1px solid $lighter-color;
+				line-height: $vspacing - 2px;
+				&:first-child,
+				&:last-child {
+					margin-left: 0;
+					margin-right: 0;
+				}
+				a {
+					padding: 0;
+					@include hover(color, $darker-color);
+				}
+				> ul {
+					margin-top: ($vspacing / 2) - 2px;
+				}
+				&.menu-item-has-children > ul > li:last-child {
+					padding-bottom: 1px;
+					margin-bottom: -1px;
+				}
+			}
+			.menu-item-has-children {
+				&.toggle-on {
+					padding-bottom: 1px;
+					> .toggle-on {
+						margin-top: $vspacing / 2;
+					}
+				}
+				> a {
+					padding-right: $vspacing-double + ($vspacing / 2);
+				}
+			}
+			
+			// 2nd level
+			ul {
+				display: none;
+				position: inherit;
+				top: auto;
+				left: auto;
+				float: none;
+				padding: 0;
+				margin: 0 0 0 $vspacing-double;
+				background: transparent;
+				border: none;
+				border-top: 1px solid $lighter-color;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: -1px;
+					left: -$vspacing-double;
+					width: 100%;
+					height: 1px;
+					background: $lighter-color;
+				}
+				&.toggle-on {
+					display: block;
+				}
+				a {
+					padding: 0;
+					width: 100%;
+					color: $darker-color;
+					@include hover(color, $link-color);
+				}
+				li {
+					padding: ($vspacing / 2) 0;
+					border-bottom: 1px solid $lighter-color;
+					&:first-child {
+						padding-top: ($vspacing / 2);
+					}
+					&:last-child {
+						padding-bottom: ($vspacing / 2);
+					}
+					> ul {
+						margin-top: ($vspacing / 2) - 2px;
+					}
+				}
+				
+				// 3rd level
+				ul {
+					top: auto;
+					left: auto;
+					margin: 0 0 0 $vspacing-double;
+					border: none;
+					border-top: 1px solid $lighter-color;
+				}
+			}
+		}
+	}
+	@include max-screen($tablet - 1px) {
+		ul {
+			ul {
+				margin-left: $vspacing;
+				&:before {
+					left: -$vspacing;
+				}
+				ul {
+					margin-left: $vspacing;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+/*--------------------------------------------------------------
+Layout
+--------------------------------------------------------------*/
+
+/* Secondary */
+.widgets-wrapper {
+	@include full-width-area-rtl;
+}
+
+/* Footer */
+.site-footer {
+	@include full-width-area-rtl;
+}
+.site-info {
+	float: right;
+}

@@ -1,0 +1,57 @@
+/*--------------------------------------------------------------
+Widgets
+--------------------------------------------------------------*/
+
+.widget {
+	float: right;
+}
+.page-content {
+	.widget {
+		margin: 0 0 0 $vspacing-double;
+		&:nth-of-type(3n+3) {
+			margin-right: $vspacing-double;
+			margin-left: 0;
+		}
+		@include screen($tablet, $desktop - 1px) {
+			&:nth-of-type(2n+2) {
+				margin-right: $vspacing-double;
+				margin-left: 0;
+			}
+			&:nth-of-type(3n+3) {
+				margin-left: $vspacing-double;
+			}
+		}
+	}
+}
+
+/* Lists */
+.widget_categories .children,
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+	&:before {
+		right: -$vspacing-double;
+		left: auto;
+		@include max-screen($tablet - 1px) {
+			right: -$vspacing;
+			left: auto;
+		}
+	}
+}
+
+/* List Layout & Grid Layout */
+.widget {
+	.widgets-list-layout {
+		.widgets-list-layout-links {
+			padding-right: $vspacing + 40px;
+			padding-left: 0;
+		}
+	}
+}
+
+/* Tag Cloud */
+.widget_tag_cloud {
+	a {
+		float: right;
+		margin: 0 0 ($vspacing / 4) ($vspacing / 4) !important;
+	}
+}

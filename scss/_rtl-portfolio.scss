@@ -1,0 +1,15 @@
+/*--------------------------------------------------------------
+Portfolio
+--------------------------------------------------------------*/
+
+/* Portfolio entry */
+.portfolio-entry {
+	@include image-big-rtl;
+	.video-wrapper,
+	.portfolio-gallery {
+		@include min-screen($widescreen) {
+			margin-right: -($widescreen - $desktop) / 2;
+			margin-left: 0;
+		}
+	}
+}

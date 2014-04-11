@@ -1,0 +1,56 @@
+/*--------------------------------------------------------------
+Elements
+--------------------------------------------------------------*/
+
+hr {
+	margin-bottom: $vspacing;
+	height: 1px;
+	background: $lighter-color;
+	border: 0;
+}
+ul,
+ol {
+	margin: 0 0 $vspacing;
+}
+ul {
+	list-style: disc inside;
+}
+ol {
+	list-style: decimal inside;
+}
+li {
+	> ul,
+	> ol {
+		margin-bottom: 0;
+		margin-left: $vspacing-double;
+		@include max-screen($tablet - 1px) {
+			margin-left: $vspacing;
+		}
+	}
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 $vspacing $vspacing;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 $vspacing;
+	width: 100%;
+	border-top: 1px solid $lighter-color;
+}
+th {
+	background: $lighter-color;
+	font-weight: bold;
+}
+th,
+td {
+	padding: ($vspacing / 2) $vspacing;
+	border-bottom: 1px solid $lighter-color;
+	@include max-screen($tablet - 1px) {
+		padding: ($vspacing / 4) ($vspacing / 2);
+	}
+}

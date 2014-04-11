@@ -1,0 +1,31 @@
+/*--------------------------------------------------------------
+Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin: $vspacing $vspacing-double $vspacing 0;
+	@include min-screen($widescreen) {
+		margin-left: ($desktop - $widescreen) / 2;
+		+ .alignleft {
+			margin-left: 0;
+		}
+	}
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin: $vspacing 0 $vspacing-double $vspacing;
+	@include min-screen($widescreen) {
+		margin-right: ($desktop - $widescreen) / 2;
+		+ .alignright {
+			margin-right: 0;
+		}
+	}
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}

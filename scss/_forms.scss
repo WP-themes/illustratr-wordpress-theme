@@ -1,0 +1,137 @@
+/*--------------------------------------------------------------
+Forms
+--------------------------------------------------------------*/
+
+button,
+input,
+select,
+textarea {
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	@include border-radius(0);
+	@include transition(all 250ms ease);
+	&:focus {
+		outline: none;
+	}
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding: ($vspacing / 2) $vspacing;
+	background: $dark-color;
+	border: 1px solid $dark-color;
+	color: $background-color;
+	text-transform: uppercase;
+	font-weight: 900;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	@include max-screen($tablet - 1px) {
+		padding: ($vspacing / 4) ($vspacing / 2);
+	}
+	@include hover(background, $link-color);
+	@include hover(border-color, $link-color);
+}
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0; /* Addresses excess padding in IE8/9 */
+	margin: 0 ($vspacing / 4) 0 0;
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	padding: $vspacing / 2;
+	width: 100%;
+	background: $lighter-color;
+	border: 1px solid $lighter-color;
+	@include max-screen($tablet - 1px) {
+		padding: $vspacing / 4;
+	}
+	&:focus {
+		background: $background-color;
+	}
+}
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+}
+label {
+	display: block;
+	margin-bottom: $vspacing / 2;
+	font-weight: bold;
+	&[class*="radio"],
+	&[class*="checkbox"] {
+		margin-bottom: 0;
+		font-size: 0.73em;
+		font-weight: normal;
+	}
+}
+
+/* Search from */
+.search-form {
+	position: relative;
+	margin-bottom: $vspacing;
+	label {
+		display: block;
+		margin: 0;
+	}
+	.search-submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		&:after {
+			@include genericon('\f400');
+		}
+	}
+}
+
+/* Password protected posts from */
+.post-password-form {
+	label {	
+		display: block;
+		margin-bottom: 0;
+	}
+	input[type="password"] {
+		margin: ($vspacing / 2) 0;
+	}
+}
+
+/* Widgets area form */
+.widgets-area {
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	textarea {
+		background: lighten($dark-color, 5%);
+		border-color: lighten($dark-color, 5%);
+		&:focus {
+			background: $dark-color;
+		}
+	}
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		background: $darker-color;
+		border-color: $darker-color;
+		@include hover(background, $background-color);
+		@include hover(border-color, $background-color);
+		@include hover(color, $link-color);
+	}
+}

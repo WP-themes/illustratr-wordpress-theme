@@ -1,0 +1,39 @@
+/*
+Theme Name: Illustratr
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+// Compass
+@import 'compass';
+
+// Settings
+@import 'scss/settings';
+
+// Mixins
+@import 'scss/mixins';
+
+// Reset
+@import 'scss/rtl-reset';
+
+// Theme
+@import 'scss/rtl-typography';
+@import 'scss/rtl-elements';
+@import 'scss/rtl-forms';
+@import 'scss/rtl-navigation';
+@import 'scss/rtl-accessibility';
+@import 'scss/rtl-layout';
+@import 'scss/rtl-menu';
+@import 'scss/rtl-social';
+@import 'scss/rtl-widgets';
+@import 'scss/rtl-content';
+@import 'scss/rtl-post-formats';
+@import 'scss/rtl-portfolio';
+@import 'scss/rtl-comments';
+@import 'scss/rtl-media';
+@import 'scss/rtl-jetpack';

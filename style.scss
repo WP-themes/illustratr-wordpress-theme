@@ -1,0 +1,54 @@
+/*
+Theme Name: Illustratr
+Theme URI: http://theme.wordpress.com/themes/illustratr/
+Author: Automattic
+Author URI: http://themes.wordpress.com
+Description: A minimalist portfolio theme.
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Text Domain: illustratr
+Domain Path: /languages/
+Tags: dark, red, white, one-column, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, infinite-scroll, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Illustratr is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+// Compass
+@import 'compass';
+
+// Settings
+@import 'scss/settings';
+
+// Mixins
+@import 'scss/mixins';
+
+// Reset
+@import 'scss/reset';
+
+// Theme
+@import 'scss/typography';
+@import 'scss/elements';
+@import 'scss/forms';
+@import 'scss/navigation';
+@import 'scss/accessibility';
+@import 'scss/alignments';
+@import 'scss/clearings';
+@import 'scss/layout';
+@import 'scss/menu';
+@import 'scss/social';
+@import 'scss/widgets';
+@import 'scss/content';
+@import 'scss/post-formats';
+@import 'scss/portfolio';
+@import 'scss/comments';
+@import 'scss/media';
+@import 'scss/jetpack';

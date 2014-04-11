@@ -1,0 +1,245 @@
+/*--------------------------------------------------------------
+Jetpack
+--------------------------------------------------------------*/
+
+/* Contact form */
+.site-main {
+	.contact-form {
+		label {
+			display: block;
+			margin-bottom: $vspacing / 2;
+			span {
+				color: $link-color;
+			}
+			&[class*="radio"],
+			&[class*="checkbox"] {
+				font-weight: normal;
+				margin-bottom: $vspacing;
+			}
+		}
+		input[type="checkbox"],
+		input[type="radio"] {
+			padding: 0;
+			margin: 0 ($vspacing / 4) 0 0;
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],
+		textarea {
+			width: 100%;
+			max-width: 100%;
+			margin-bottom: $vspacing;
+		}
+		.clear-form + label[class*="radio"],
+		.clear-form + label[class*="checkbox"] {
+			float: left;
+			margin-top: -($vspacing / 2);
+		}
+	}
+}
+
+
+/* Sharedaddy */
+.page-content,
+.entry-content,
+.entry-sharedaddy,
+.portfolio-sharedaddy {
+	> .sharedaddy {
+		padding-top: 0 !important;
+		font-family: inherit !important;
+		font-size: inherit !important;
+		&:empty {
+			display: none;
+		}
+		.sd-sharing,
+		.sd-gplus,
+		&.jetpack-likes-widget-wrapper {
+			padding: ($vspacing - 5px) 0;
+			border-top: 1px solid $lighter-color;
+		}
+		.jetpack-likes-widget {
+			margin-top: 5px !important;
+		}
+		.sd-gplus {
+			padding-bottom: $vspacing;
+			margin: 0;
+		}
+		.sd-title {
+			margin: 5px 0 !important;
+			font-family: inherit !important;
+			line-height: 1.5 !important;
+		}
+		.sd-content {
+			ul {
+				margin: 0 !important;
+			}
+		}
+	}
+	> .jp-relatedposts {
+		padding: $vspacing 0 0;
+		margin: 0;
+		border-top: 1px solid $lighter-color;
+		a,
+		img {
+			display: block;
+		}
+		img {
+			margin-bottom: $vspacing / 2;
+		}
+		.jp-relatedposts-headline {
+			margin-bottom: $vspacing / 2;
+			font-size: 0.73em;
+			em {
+				&:before {
+					display: none;
+				}
+			}
+		}
+		.jp-relatedposts-post {
+			margin-bottom: $vspacing;
+			font-size: inherit !important;
+			line-height: 1.5 !important;
+			filter: alpha(opacity=100);
+			-moz-opacity: 1;
+			opacity: 1;
+			span {
+				font-size: 0.73em;
+			}
+			.jp-relatedposts-post-context {
+				font-family: $serif-font;
+				font-style: italic;
+				filter: alpha(opacity=100);
+				-moz-opacity: 1;
+				opacity: 1;
+			}
+			.jp-relatedposts-post-title {
+				text-transform: uppercase;
+			}
+		}
+	}
+	> *:not(.video-wrapper) + .sharedaddy,
+	> *:not(.video-wrapper) + .jp-relatedposts {
+		margin-top: $vspacing-double;
+	}
+	> .sharedaddy + .sharedaddy,
+	> .sharedaddy + .jp-relatedposts {
+		padding-top: 0;
+		margin-top: 5px;
+		border-top: 0;
+	}
+	> .sharedaddy + .jp-relatedposts {
+		margin-top: 0;
+	}
+}
+#page {
+	#primary .sharedaddy h3 {
+		font-size: 0.73em;
+	}
+}
+.entry-sharedaddy,
+.portfolio-sharedaddy {
+	margin-top: $vspacing-double;
+	#jp-post-flair {
+		> div:first-of-type {
+			margin-top: -$vspacing;
+			border-top: 0 !important;
+		}
+	}
+}
+.portfolio-sharedaddy {
+	> .sharedaddy {
+		padding-top: 0 !important;
+		font-family: inherit !important;
+		font-size: inherit !important;
+		.sd-sharing,
+		.sd-gplus,
+		&.jetpack-likes-widget-wrapper {
+			padding: ($vspacing - 5px) 0;
+			border-top: 1px solid $lighter-color;
+		}
+		.jetpack-likes-widget {
+			margin-top: 5px !important;
+		}
+		.sd-gplus {
+			padding-bottom: $vspacing;
+			margin: 0;
+		}
+		.sd-title {
+			margin: 5px 0 !important;
+			font-family: inherit !important;
+			line-height: 1.5 !important;
+		}
+		.sd-content {
+			ul {
+				margin: 0 !important;
+			}
+		}
+	}
+}
+
+/* Infinite Scroll */
+#infinite-footer {
+	display: none;
+}
+.infinite-scroll {
+	.paging-navigation,
+	&.neverending .site-footer {
+		display: none;
+	}
+}
+.infinity-end {
+	&.neverending .site-footer {
+		display: block;
+	}
+}
+.infinite-wrap {
+	> .hentry {
+		@include hentry;
+	}
+}
+#infinite-handle {
+	position: relative;
+	padding-bottom: $vspacing;
+	text-align: center;
+	@include hentry;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		height: 1px;
+		background: $lighter-color;
+		@include full-width-area;
+	}
+	span {
+		display: inline-block;
+		padding: 0;
+		background: transparent;
+		font-size: inherit;
+		@include navigation-link;
+		@include border-radius(0);
+	}
+}
+span.infinite-loader {
+	position: relative;
+	padding: $vspacing-triple 0 0 0;
+	margin: $vspacing-triple 0 0;
+	height: 1.5em;
+	text-align: center;
+	@include box-sizing(content-box);
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		height: 1px;
+		background: $lighter-color;
+		@include full-width-area;
+	}
+	.spinner {
+		left: 50% !important;
+		top: 50% !important;
+		margin-top: -0.75em;
+		z-index: 9998 !important;
+	}
+}

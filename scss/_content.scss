@@ -1,0 +1,227 @@
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+
+.sticky {
+	position: relative;
+}
+.page-header,
+.hentry {
+	position: relative;
+	+ .hentry {
+		@include hentry;
+	}
+}
+.page-header {
+	+ .hentry {
+		margin-top: $vspacing-quadruple;
+		@include max-screen($tablet - 1px) {
+			margin-top: $vspacing-double;
+		}
+	}
+}
+.byline,
+.updated {
+	display: none;
+}
+.group-blog {
+	.byline {
+		display: inline;
+	}
+}
+.page-content,
+.entry-content,
+.entry-summary {
+	position: relative;
+	margin-top: $vspacing-double;
+}
+
+/* Taxonomy description */
+.taxonomy-description {
+	padding-top: $vspacing / 2;
+	@include entry-meta;
+	p {
+		margin: 0;
+	}
+}
+
+/* Entry thumbnail */
+.entry-thumbnail {
+	@include thumbnail;
+}
+
+/* Entry gallery */
+.entry-gallery {
+	margin-bottom: $vspacing-double;
+}
+
+/* Entry header */
+.page-header,
+.entry-header {
+	position: relative;
+	padding-bottom: $vspacing + 2px;
+	text-align: center;
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -$vspacing * 10;
+		width: $vspacing * 20;
+		height: 2px;
+		background: $darker-color;
+		@include max-screen($tablet - 1px) {
+			left: 0;
+			margin-left: 0;
+			width: $mobile;
+		}
+	}
+}
+.page-title,
+.entry-title {
+	@include entry-title;
+}
+.featured-post,
+.cat-links {
+	padding-top: $vspacing / 2;
+	@include entry-meta;
+}
+.featured-post + .cat-links {
+	&:before {
+		content: "\b7";
+		margin-right: $vspacing / 4;
+	}
+}
+
+/* Entry avatar */
+.entry-avatar {
+	position: relative;
+	padding-bottom: $vspacing-double;
+	margin-top: -($vspacing - 6px);
+	img {
+		display: block;
+		margin: 0 auto;
+		@include border-radius(50%);
+	}
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 50%;
+	}
+	&:before {
+		top: -$vspacing - 7px;
+		z-index: 2;
+		border-top: $vspacing solid $background-color;
+		border-right: $vspacing solid transparent;
+	}
+	&:after {
+		margin-left: -1px;
+		top: -$vspacing - 7px;
+		z-index: 1;
+		border-top: ($vspacing + 2px) solid $lighter-color;
+		border-right: ($vspacing + 2px) solid transparent;
+	}
+}
+
+/* Entry meta */
+.entry-meta {
+	position: relative;
+	padding: ($vspacing + 1px) 0 $vspacing 0;
+	margin-top: $vspacing;
+	@include entry-meta;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -$vspacing * 10;
+		width: $vspacing * 20;
+		height: 1px;
+		background: $lighter-color;
+		@include max-screen($tablet - 1px) {
+			left: 0;
+			margin-left: 0;
+			width: $mobile;
+		}
+	}
+	span {
+		&:after {
+			content: "\b7";
+			margin-left: $vspacing / 4;
+		}
+		&:last-of-type:after {
+			display: none;
+			margin-left: 0;
+		}
+	}
+}
+.empty-entry-meta {
+	.entry-meta {
+		padding-bottom: 0;
+		margin-top: -$vspacing;
+		&:before {
+			display: none;
+		}
+	}
+}
+.entry-header + .entry-meta {
+	padding-top: 0;
+	&:before {
+		display: none;
+	}
+}
+
+/* More link */
+.more-link-wrapper {
+	margin-bottom: $vspacing;
+	.more-link {
+		@include navigation-link;
+	}
+}
+.meta-nav {
+	display: none;
+}
+
+/* Page links */
+.page-links {
+	padding: ($vspacing / 4) 0 0;
+	margin: 0 0 $vspacing 0;
+	border-top: 1px solid $lighter-color;
+	border-bottom: 1px solid $lighter-color;
+	.page-link {
+		@include page-link;
+		background: $link-color;
+		border: 1px solid $link-color;
+		color: $background-color;
+		font-size: 0.73em;
+		line-height: $vspacing-double - 2px; // - .page-link { border-left-width } - .page-link { border-right-width }
+		font-weight: 600;
+		text-align: center;
+	}
+	a {
+		@include page-link;
+		.page-link {
+			background: $background-color;
+			border-color: $lighter-color;
+			color: $light-color;
+			@include hover(background, $lighter-color);
+		}
+	}
+}
+* + .page-links {
+	margin-top: $vspacing-double;
+}
+
+/* Error 404 */
+.error-404 {
+	.search-form {
+		margin-bottom: $vspacing-double;
+	}
+	.page-content {
+		margin-bottom: -$vspacing;
+	}
+}

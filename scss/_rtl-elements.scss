@@ -1,0 +1,15 @@
+/*--------------------------------------------------------------
+Elements
+--------------------------------------------------------------*/
+
+li {
+	> ul,
+	> ol {
+		margin-right: $vspacing-double;
+		margin-left: 0;
+		@include max-screen($tablet - 1px) {
+			margin-right: $vspacing;
+			margin-left: 0;
+		}
+	}
+}

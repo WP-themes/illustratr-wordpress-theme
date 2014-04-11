@@ -1,0 +1,16 @@
+/*--------------------------------------------------------------
+Forms
+--------------------------------------------------------------*/
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin: 0 0 0 ($vspacing / 4);
+}
+
+/* Search from */
+.search-form {
+	.search-submit {
+		right: auto;
+		left: 0;
+	}
+}

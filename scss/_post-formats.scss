@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+Post Formats
+--------------------------------------------------------------*/
+
+.hentry {
+	
+	// Aside
+	&.format-aside {
+		.featured-post,
+		.cat-links {
+			padding-top: 0;
+		}
+		.entry-summary,
+		.entry-content {
+			margin-top: 0;
+			margin-bottom: $vspacing;
+		}
+	}
+	
+	// Quote
+	&.format-quote {
+		.entry-summary,
+		.entry-content {
+			margin-top: 0;
+			margin-bottom: $vspacing;
+		}
+	}
+	
+	// Image
+	&.format-image {
+		@include image-big;
+	}
+	
+	// Video & Audio
+	&.format-video,
+	&.format-audio {
+		.entry-media,
+		> .video-wrapper {
+			margin-bottom: $vspacing-double;
+			p,
+			embed,
+			iframe,
+			object,
+			video,
+			audio,
+			.mejs-audio {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+	
+	// Status
+	&.format-status {
+		.featured-post,
+		.cat-links {
+			padding-top: 0;
+		}
+		.entry-summary,
+		.entry-content {
+			padding: $vspacing-double $vspacing-double $vspacing $vspacing-double;
+			margin-top: 0;
+			margin-bottom: $vspacing-double;
+			border: 1px solid $lighter-color;
+		}
+	}
+	
+}

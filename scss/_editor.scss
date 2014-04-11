@@ -1,0 +1,18 @@
+body {
+	padding: $vspacing-double $vspacing-double $vspacing $vspacing-double;
+	max-width: 840px;
+}
+
+.mceItemTable,
+.mceItemTable td,
+.mceItemTable th,
+.mceItemTable caption,
+.mceItemVisualAid {
+	border: none;
+}
+
+img.mce-wp-nextpage,
+img.mce-wp-more {
+	width: 100%;
+	margin: 20px 0;
+}

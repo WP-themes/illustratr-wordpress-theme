@@ -1,0 +1,29 @@
+// Fonts
+$sans-serif-font: "Source Sans Pro", sans-serif;
+$serif-font: "PT Serif", serif;
+$header-font: $sans-serif-font;
+$code-font: "Source Code Pro", monospace;
+$font-size: 1.375em; // 22px
+$mobile-font-size: 1.125em; // 18px
+
+// Colors
+$background-color: #ffffff;
+$text-color: #7f8d8c;
+$link-color: #e06d5e;
+$dark-color: #464d4d;
+$darker-color: #24282d;
+$light-color: #b1b2b3;
+$lighter-color: #f1f2f3;
+
+// Vertical spacing
+$vspacing: 20px;
+$vspacing-double: $vspacing * 2;
+$vspacing-triple: $vspacing * 3;
+$vspacing-quadruple: $vspacing * 4;
+
+
+// Media queries
+$widescreen: 1220px;
+$desktop: 960px;
+$tablet: 768px;
+$mobile: 100%;

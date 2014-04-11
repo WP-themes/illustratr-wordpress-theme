@@ -1,0 +1,94 @@
+/*--------------------------------------------------------------
+Menu
+--------------------------------------------------------------*/
+
+.main-navigation {
+	
+	// First level
+	ul {
+		li {
+			&:first-child {
+				margin-right: 0;
+				margin-left: 8px;
+			}
+			&:last-child {
+				margin-right: 8px;
+				margin-left: 0;
+			}
+		}
+		.genericon {
+			right: auto;
+			left: 0;
+		}
+		
+		// 2nd level
+		ul {
+			float: right;
+			text-align: right;
+			
+			// 3rd level
+			ul {
+				top: -($vspacing / 2 + 1px) + 10px;
+				right: 100%;
+				left: auto;
+				margin-right: -10px;
+				margin-left: 0;
+			}
+		}
+	}
+	
+	@include max-screen($desktop - 1px) {
+		
+		// 1st level
+		ul {
+			text-align: right;
+			li {
+				margin: 0;
+				&:first-child,
+				&:last-child {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+			.menu-item-has-children {
+				> a {
+					padding-right: 0;
+					padding-left: $vspacing-double + ($vspacing / 2);
+				}
+			}
+			
+			// 2nd level
+			ul {
+				right: auto;
+				float: none;
+				margin: 0 $vspacing-double 0 0;
+				&:before {
+					right: -$vspacing-double;
+					left: auto;
+				}
+				
+				// 3rd level
+				ul {
+					right: auto;
+					margin: 0 $vspacing-double 0 0;
+				}
+			}
+		}
+	}
+	@include max-screen($tablet - 1px) {
+		ul {
+			ul {
+				margin-right: $vspacing;
+				margin-left: 0;
+				&:before {
+					right: -$vspacing;
+					left: auto;
+				}
+				ul {
+					margin-right: $vspacing;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}

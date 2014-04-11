@@ -1,0 +1,24 @@
+/*--------------------------------------------------------------
+Navigation
+--------------------------------------------------------------*/
+
+/*  Pagination */
+.site-main {
+	.comment-navigation,
+	.paging-navigation,
+	.post-navigation {
+		@include hentry-rtl;
+		.nav-previous,
+		.nav-next {
+			width: 50%;
+		}
+		.nav-previous {
+			float: right;
+			text-align: right;
+		}
+		.nav-next {
+			float: left;
+			text-align: left;
+		}
+	}
+}

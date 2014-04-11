@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------
+Social
+--------------------------------------------------------------*/
+
+.menu-social {
+	float: left;
+	ul {
+		float: left;
+	}
+	li {
+		float: right;
+		margin: 0 0 ($vspacing / 2) ($vspacing / 2);
+		&:last-child {
+			margin-left: 0;
+		}
+	}
+}
